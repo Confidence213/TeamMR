@@ -1,0 +1,22 @@
+{
+  "name": "teammanipalracing",
+  "version": "1.0.0",
+  "description": "The repository for the official website of Team Manipal Racing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client && yarn start",
+    "backend": "cd backend && yarn dev-start",
+    "start": "concurrently \"yarn client\" \"yarn backend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parthiv-M/teammanipalracing.git"
+  },
+  "author": "Parthiv Menon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Parthiv-M/teammanipalracing/issues"
+  },
+  "homepage": "https://github.com/Parthiv-M/teammanipalracing#readme"
+}
