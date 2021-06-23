@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Parthiv-M/teammanipalracing/issues"
   },
-  "homepage": "https://github.com/Parthiv-M/teammanipalracing#readme"
+  "homepage": "https://github.com/Parthiv-M/teammanipalracing#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
 }
