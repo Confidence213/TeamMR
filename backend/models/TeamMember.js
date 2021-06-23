@@ -7,13 +7,25 @@ const Team = new Schema({
         type: String,
         required: true
     },
+    teamYear: {
+        type: Number,
+        required: true
+    },
+    isAlumni: {
+        type: Boolean,
+        required: true        
+    },
+    isTopThree: {
+        type: Boolean,
+        default: false
+    },
     position: {
         type: String, 
         required: true
     },
     subsystem: {
         type: String,
-        required: true
+        default: ""
     },
     isHeadOfSubsystem: {
         type: Boolean,

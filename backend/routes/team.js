@@ -13,12 +13,17 @@ router.post('/', (req, res) => {
         const team = new Team({
             name: req.body.name,
             position: req.body.position,
-            subsystem: req.body.subsystem,
+            teamYear: req.body.teamYear,
+            isAlumni: req.body.isAlumni,
+            subsystem: req.body.subsystem ? req.body.subsystem : "",
             isHeadOfSubsystem: req.body.isHeadOfSubsystem,
             teamType: req.body.teamType,
             image: req.body.image,
             socialLinks: {}
         });
+        if(req.body.isTeamLead)  team.isTeamLead = req.body.isTeamLead;
+        if(req.body.isTeamManager)  team.isTeamManager = req.body.isTeamManager;
+        if(req.body.isTechHead)  team.isTechHead = req.body.isTechHead;
         if(req.body.instagram)  team.socialLinks.instagram = req.body.instagram;
         if(req.body.linkedin)  team.socialLinks.linkedin = req.body.linkedin;
         team.save().then(() => {
@@ -34,15 +39,28 @@ router.post('/', (req, res) => {
 });
 
 // route to fetch team members according to subsytem from the database
-router.get('/:teamType/:subsystem', async (req, res) => {
+router.get('/:teamType/:teamYear', async (req, res) => {
     try {
         let teamType = req.params.teamType;
-        let subSystem = req.params.subsystem;
+        let subSystem = req.query.subSystem;
         let isSubHeads = req.query.isSubHead;
+        let teamYear = req.params.teamYear;
+        let isAlumni = req.query.isAlumni;
+        let isTopThree = req.query.isTopThree;
+
+        if(!teamType) return res.status(401).send({ success: false, message: 'Team type not specified' });
+        if(!subSystem) return res.status(401).send({ success: false, message: 'Query for subsystem not specified' });
+        if(!isSubHeads) return res.status(401).send({ success: false, message: 'Query for subsystem head not specified' });
+        if(!isAlumni) return res.status(401).send({ success: false, message: 'Query for alumni not specified' });
+        if(!teamYear) return res.status(401).send({ success: false, message: 'Query for team year not specified' });
+
         let members = await Team.find({
             teamType: teamType,
+            teamYear: teamYear,
+            isAlumni: isAlumni,
+            isTopThree: isTopThree,
             subsystem: subSystem,
-            isHeadOfSubsystem: isSubHeads
+            isHeadOfSubsystem: isSubHeads,
         });
         res.status(200).send(members);
     } catch (error) {
