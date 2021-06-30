@@ -5,3 +5,213 @@
 .font-staatliches {
     font-family: 'Staatliches', sans-serif;
 }
+
+:root {
+    --primary-color: #EC7B4D;
+    --contrast-color: #EFEFEF;
+    --background-color: #141414;
+}
+
+body {
+  background-color: var(--background-color);
+  overflow-x: hidden;
+}
+
+/* customise scrollbar */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) rgb(0, 0, 0);
+}
+
+/* Works on Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
+    width: 7px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #f05416;
+}
+
+/* customise links */
+
+a:hover {
+    text-decoration: none;
+}
+
+/* customise navbar links */
+
+.navbar-content a {
+    font-weight: 500;
+    color: var(--contrast-color);
+}
+
+.navbar-content a:hover {
+    font-weight: 700;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    color: var(--primary-color);
+}
+
+.navbar-content a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 3px;
+    left: 50%;
+    background: var(--primary-color);
+    -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.navbar-content a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+/* sidebar styles */
+
+.sidebar {
+    -webkit-animation: fade-in 1000ms;
+            animation: fade-in 1000ms;
+}
+
+.close-sidebar {
+    -webkit-animation: barrel-roll 2000ms;
+            animation: barrel-roll 2000ms;
+}
+
+@-webkit-keyframes fade-in {
+    from {
+        -webkit-transform: translateX(-100px);
+                transform: translateX(-100px);
+        /* opacity: 0%; */
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+    } to {
+        opacity: 100%;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+    }
+}
+
+@keyframes fade-in {
+    from {
+        -webkit-transform: translateX(-100px);
+                transform: translateX(-100px);
+        opacity: 50%;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+    } to {
+        opacity: 100%;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+    }
+}
+
+@-webkit-keyframes barrel-roll {
+    from {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+        opacity: 0%;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+    } to {
+        opacity: 100%;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+    }
+}
+
+@keyframes barrel-roll {
+    from {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+        opacity: 0%;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+    } to {
+        opacity: 100%;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=NaN)";
+    }
+}
+
+/* footer styles */
+
+.findus-button {
+    background-color: transparent;
+    color: var(--primary-color); 
+    border: 1px solid #ec7b4d; 
+    border-radius: 30px;
+}
+
+.findus-button:hover{
+    background-color: var(--contrast-color);
+}
+
+/* custom css */
+
+.gradient-heading {
+    background: -webkit-linear-gradient(135deg, #efefef, #f05416);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text {
+    background: -webkit-linear-gradient(135deg, #efefef, rgb(150, 150, 150), #efefef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Typewriter__cursor{
+    color: var(--contrast-color);
+}
+
+/* input styling */
+
+input, input:focus {
+    color: white;
+}
+
+.form-control {
+    color: white;
+}
+
+::-webkit-input-placeholder {
+  font-size: 1.4rem;
+}
+
+::-moz-placeholder {
+  font-size: 1.4rem;
+}
+
+:-ms-input-placeholder {
+  font-size: 1.4rem;
+}
+
+::placeholder {
+  font-size: 1.4rem;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: 0px 0px 5px var(--primary-color);
+}
+
+.chunky-underline {
+    background-image: linear-gradient(
+      transparent 0%, 
+      transparent 60%, 
+      var(--primary-color) 70%, 
+      #f05416 100%, 
+      transparent 100%, 
+      transparent
+    );
+    z-index: -999;
+}
