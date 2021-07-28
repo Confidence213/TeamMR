@@ -147,7 +147,8 @@ a:hover {
     background-color: transparent;
     color: var(--primary-color); 
     border: 1px solid #ec7b4d; 
-    border-radius: 30px;
+    border-radius: 10px;
+    margin-left: 10px;
 }
 
 .findus-button:hover{
@@ -188,14 +189,17 @@ input, input:focus {
 
 ::-moz-placeholder {
   font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.445);
 }
 
 :-ms-input-placeholder {
   font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.445);
 }
 
 ::placeholder {
   font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.445);
 }
 
 .form-control:focus {

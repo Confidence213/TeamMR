@@ -1,0 +1,12 @@
+.sponsors-banner {
+    top: 0;
+    left: 0;
+    filter: brightness(40%);
+    height: 40vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background: url('./../Assets/sponsorsBack.jpg');
+    background-size: cover;
+    background-position: center;
+}
+

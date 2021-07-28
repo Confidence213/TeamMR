@@ -23,9 +23,14 @@ const Navbar = () => {
     const [scroll, setScroll] = useState(false);
     
     useEffect(() => {
-        window.addEventListener("scroll", () => {
+
+        const handleScroll = () => {
             setScroll(window.scrollY > 150);
-        });
+        }
+        window.addEventListener('scroll', handleScroll);
+        return function cleanupListener() {
+            window.removeEventListener('scroll', handleScroll);
+        }
     }, []);
 
     return (
@@ -50,6 +55,9 @@ const Navbar = () => {
                     <Link to='/team/M-Baja' className='navbar-link font-size-14 px-10 d-none d-md-block font-staatliches'>
                         TEAM
                     </Link>
+                    <Link to='/alumni' className='navbar-link font-size-14 px-10 d-none d-md-block font-staatliches'>
+                        ALUMNI
+                    </Link>
                     <Link to='/sponsors' className='navbar-link font-size-14 px-10 d-none d-md-block font-staatliches'>
                         SPONSORS 
                     </Link>                    
@@ -68,6 +76,9 @@ const Navbar = () => {
                         </Link>
                         <Link to='/team/M-Baja' className="sidebar-link sidebar-link-with-icon font-size-24 font-weight-bolder text-white mx-20 my-15" style={{ width: 'fit-content', borderBottom: '1px solid #ec7b4d' }}>
                             TEAM
+                        </Link>
+                        <Link to='/alumni' className='navbar-link font-size-14 px-10 d-none d-md-block font-staatliches'>
+                            ALUMNI
                         </Link>
                         <Link to='/sponsors' className="sidebar-link sidebar-link-with-icon font-size-24 font-weight-bolder text-white mx-20 my-15" style={{ width: 'fit-content', borderBottom: '1px solid #ec7b4d' }}>
                             SPONSORS

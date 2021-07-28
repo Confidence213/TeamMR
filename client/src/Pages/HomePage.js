@@ -33,7 +33,7 @@ const HomePage = () => {
                   content="The official website of Team Manipal Racing"
                 />
                 <meta property="og:image" content='' />
-                <meta property="og:url" content='https://teammanipalracing/' />
+                <meta property="og:url" content='https://teammanipalracing.com/' />
                 <meta
                   property="og:site_name"
                   content="Team Manipal Racing"
@@ -68,7 +68,7 @@ const HomePage = () => {
               <div style={{ height: 'auto' }}>
                   <WhoAreWe />
               </div>
-              <div style={{ height: 'auto' }}>
+              <div style={{ height: 'auto' }} id="contact-us">
                 <ContactUs />
               </div>            
             <Footer />

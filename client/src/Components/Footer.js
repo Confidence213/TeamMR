@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from './../Assets/tmrLogo.png';
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Mail } from 'react-feather';
 
 const Footer = () => {
@@ -16,45 +16,44 @@ const Footer = () => {
         setIndex(0);
     }
 
+    const divStyle = { color: '#FFFFFF', paddingRight: '1rem', fontSize: '2.25rem', fontWeight:'lighter' };
+
     return (
-        <div className='container-fluid'>
-            <div className='row p-20 justify-content-around align-items-center text-white font-fira-sans z-10' style={{ backgroundColor:'#0e0e0e' }}> 
-                <div className='col-md-4 col-12 m-md-0 my-15 text-center'>
-                    <a href='/'>
-                        <img src={logo} alt="TMR Logo" style={{ height: '7rem' }}/>
-                    </a>
-                </div>
-                <div className='col-md-4 col-12 pl-md-20 text-center text-md-left w-300' style={{ lineHeight:'0.1rem'}}>
-                    <h4 className='font-weight-bold pl-md-20 mr-md-auto'>Team Manipal Racing</h4>
-                    <h5 className='font-weight-light pl-md-20 mr-md-auto'>Manipal Institute of Technology</h5>
-                    <h5 className='font-weight-light pl-md-20 mr-md-auto'>Udupi, Karnataka</h5>
-                    <h5 className='font-weight-light pl-md-20 mr-md-auto'>576104</h5>
-                </div>
-                <div className='col-md-4 col-12 m-md-0 my-15 text-center' style={{ lineHeight:'0.09rem' }}>
-                    <div className='d-flex flex-row justify-content-center'>
-                        <a className='m-5' target='_blank' rel='noreferrer' href='/dummy'>
-                            <Instagram onMouseEnter={() => onHover(1)} onMouseLeave={noHover} size={30} color={ hover && index === 1 ? '#ec7b4d' : '#e3e5e5' }/>
+        <div>
+            <div className='w-md-half w-full container-fluid'>
+                <div className='row justify-content-center'>
+                    <div className='col-12 d-flex justify-content-center mt-20'>
+                        <a className='mx-10' target='_blank' rel='noreferrer' href='/dummy'>
+                            <Instagram onMouseEnter={() => onHover(1)} onMouseLeave={noHover} size={35} color={ hover && index === 1 ? '#ec7b4d' : '#e3e5e5' }/>
                         </a>
-                        <a className='m-5' target='_blank' rel='noreferrer' href='/dum'>
-                            <Linkedin onMouseEnter={() => onHover(2)} onMouseLeave={noHover} size={30} color={ hover && index === 2 ? '#ec7b4d' : '#e3e5e5' }/>
+                        <a className='mx-10' target='_blank' rel='noreferrer' href='/dum'>
+                            <Linkedin onMouseEnter={() => onHover(2)} onMouseLeave={noHover} size={35} color={ hover && index === 2 ? '#ec7b4d' : '#e3e5e5' }/>
                         </a>
-                        <a className='m-5' target='_blank' rel='noreferrer' href='/dummy'>
-                            <Mail onMouseEnter={() => onHover(3)} onMouseLeave={noHover} size={30} color={ hover && index === 3 ? '#ec7b4d' : '#e3e5e5' }/>
+                        <a className='mx-10' target='_blank' rel='noreferrer' href='mailto:tmr.mit@manipal.edu'>
+                            <Mail onMouseEnter={() => onHover(3)} onMouseLeave={noHover} size={35} color={ hover && index === 3 ? '#ec7b4d' : '#e3e5e5' }/>
                         </a>
-                        <a className='m-5' target='_blank' rel='noreferrer' href='/dummy'>
-                            <Facebook onMouseEnter={() => onHover(4)} onMouseLeave={noHover} size={30} color={ hover && index === 4 ? '#ec7b4d' : '#e3e5e5' }/>
+                        <a className='mx-10' target='_blank' rel='noreferrer' href='https://www.facebook.com/Team.Manipal.Racing/'>
+                            <Facebook onMouseEnter={() => onHover(4)} onMouseLeave={noHover} size={35} color={ hover && index === 4 ? '#ec7b4d' : '#e3e5e5' }/>
                         </a>
                     </div>
-                    {/* <div className='font-fira-sans m-20 font-size-16 font-weight-light'>
-                        <p>CONNECT WITH TMR</p>
-                    </div> */}
-                    <hr style={{ background:"#ec7b4d", width:'15rem', height:'0.01rem' }}/>
-                    <div className='font-fira-sans m-20 font-size-14 font-weight-lighter'>
-                        <p>- We made this website -</p>
+                    <div style={{borderBottom: '1px solid white'}} className='w-md-full w-three-quarter my-10'></div>
+                    <div className='col-6 justify-content-center my-15 font-fira-sans'>
+                        <div className='col-md-6 mx-auto col-12 d-flex justify-content-around'>
+                        <Link to='/' style={divStyle} className='mx-md-10'>Home</Link>
+                        <Link to='/cars' style={divStyle} className='mx-md-10'>Cars</Link>
+                        <Link to='/team' style={divStyle} className='mx-md-10'>Team</Link>
+                        </div>
+                        <div className='col-md-6 mx-auto col-12 d-flex justify-content-around'>
+                        <Link to='/sponsors' style={divStyle} className='mx-md-10'>Sponsors</Link>
+                        <Link to='/achievements' style={divStyle} className='mx-md-10'>Achievements</Link>
+                        <Link to='/home#contact' style={divStyle} className='mx-md-10'>Contact</Link>
+                        </div>
                     </div>
-                    <button className='btn font-size-12 font-fira-sans findus-button' type="button">
-                        FIND US
-                    </button>
+                    <div style={{borderBottom: '1px solid white'}} className='w-md-full w-three-quarter my-10'></div>
+                    <div className='col-12 font-fira-sans'>
+                        <p style={{ fontSize: '1.6rem', color: '#FFFFFF',fontWeight:'lighter' }} className='mx-auto text-center'>We made this website. 
+                        <span style={{ color: '#EC7B4D' }} className='findus-button p-5'><Link to='/findus'>Find us</Link></span></p>
+                    </div>
                 </div>
             </div>
         </div>
