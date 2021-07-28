@@ -42,26 +42,28 @@ router.post('/', (req, res) => {
 router.get('/:teamType/:teamYear', async (req, res) => {
     try {
         let teamType = req.params.teamType;
-        let subSystem = req.query.subSystem;
+        let subsystem = req.query.subsystem;
         let isSubHeads = req.query.isSubHead;
         let teamYear = req.params.teamYear;
         let isAlumni = req.query.isAlumni;
         let isTopThree = req.query.isTopThree;
 
         if(!teamType) return res.status(401).send({ success: false, message: 'Team type not specified' });
-        if(!subSystem) return res.status(401).send({ success: false, message: 'Query for subsystem not specified' });
+        if(!isTopThree && !subSystem) return res.status(401).send({ success: false, message: 'Query for subsystem not specified' });
         if(!isSubHeads) return res.status(401).send({ success: false, message: 'Query for subsystem head not specified' });
         if(!isAlumni) return res.status(401).send({ success: false, message: 'Query for alumni not specified' });
         if(!teamYear) return res.status(401).send({ success: false, message: 'Query for team year not specified' });
 
-        let members = await Team.find({
-            teamType: teamType,
-            teamYear: teamYear,
-            isAlumni: isAlumni,
-            isTopThree: isTopThree,
-            subsystem: subSystem,
-            isHeadOfSubsystem: isSubHeads,
-        });
+        let query = {}
+        
+        if(teamType) query.teamType = teamType;
+        if(teamYear) query.teamYear = teamYear;
+        if(isTopThree) query.isTopThree = isTopThree;
+        if(isSubHeads) query.isHeadOfSubsystem = isSubHeads;
+        if(isAlumni) query.isAlumni = isAlumni;
+        if(subsystem) query.subsystem = subsystem;
+
+        let members = await Team.find(query);
         res.status(200).send(members);
     } catch (error) {
         console.log(error);

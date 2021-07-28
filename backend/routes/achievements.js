@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
 // route to fetch all achievements from the database
 router.get('/', async (req, res) => {
     try {
-        const achievements = await Achievement.find({});
+        const achievements = await Achievement.find({}).sort({ year: -1 });
         if(!achievements){
             res.status(401).send({ success: false, message: 'Could not find achievements' })
         } else {

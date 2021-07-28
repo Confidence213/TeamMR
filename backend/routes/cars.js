@@ -34,7 +34,19 @@ router.post('/', (req, res) => {
     }
 });
 
-// route to fetch cars according to version number from the database
+// route to fetch all cars from the database
+router.get('/', async (req, res) => {
+    try {
+        let cars = await Cars.find({});
+        if(!cars) return res.status(401).send({ success: false });
+        res.status(200).send(cars);
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({ success:false });
+    }
+});
+
+// route to fetch car by version number from the database
 router.get('/:versionNum', async (req, res) => {
     try {
         let version = req.params.versionNum;
