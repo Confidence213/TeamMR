@@ -1,12 +1,5 @@
 /* cars and cars detail page styles */
 
-.car-banner {
-    background: url('./../Assets/carsBack.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .card-hover {
     opacity: 0;
     /* for IE */

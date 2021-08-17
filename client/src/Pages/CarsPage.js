@@ -15,7 +15,7 @@ const CarsPage = () => {
     useEffect(() => {
         async function fetchData  () {
             const resCars = await axios.get('api/cars/');
-            setCars(resCars.data);
+            setCars(resCars.data.reverse());
             setLoading(false);
         }
         fetchData();
@@ -70,11 +70,16 @@ const CarsPage = () => {
                     OUR CARS, OUR PRIDE
                 </div>
                 <div className='z-10 position-absolute car-banner' style={{ width:'100vw', height:'40vh', left:'0', top:'0', filter:'brightness(40%)' }}/></div>
+                <div className='font-fira-sans text-white font-size-16 text-center w-md-half mx-auto' style={{ padding:'5rem 5rem' }}>
+                    <p className='text-white'>
+                        We work hard to create all our cars, from design to production. Take a look at all the powerful cars we have built till date.  
+                    </p>
+                </div>
                 {
                     loading ? <div className='h-550'><LoaderComponent /></div> 
                     : 
                     <>
-                        <div className='d-flex flex-wrap align-items-center justify-content-center' style={{ padding: '5rem 20%' }}>
+                        <div className='d-flex flex-wrap align-items-center justify-content-center mb-20' style={{ padding: '2rem 20%' }}>
                         <div className='car-card-back'></div>
                         <CarCards data={cars} />
                         </div>

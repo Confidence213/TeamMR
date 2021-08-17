@@ -75,7 +75,8 @@ const AchievementsPage = () => {
                 <div>
                     <div className='font-fira-sans text-white font-size-16 text-center w-md-half mx-auto' style={{ padding:'5rem 5rem' }}>
                         <p className='text-white'>
-                            At Team Manipal Racing, we are proud of our achievements. Earned through years of teamwork, perseverance, and relentless effort, these are some of our proudest moments as a team. 
+                            At Team Manipal Racing, we are proud of our achievements. Earned through years of teamwork, perseverance, and relentless effort, 
+                            these are some of our proudest moments as a team. 
                         </p>
                     </div>
                     <div className='container-fluid w-md-three-quarter w-full'>
@@ -94,40 +95,6 @@ const AchievementsPage = () => {
                 </div>
             }
             <Footer/>
-            <style jsx>{`
-                .achievements-banner{
-                    top: 0;
-                    left: 0;
-                    filter: brightness(40%);
-                    height: 40vh;
-                    width: 100vw;
-                    position: absolute;
-                    background-repeat: no-repeat;
-                    background: url('https://images.unsplash.com/photo-1578269174936-2709b6aeb913?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
-                    background-size: cover;
-                    background-position: center;
-                }
-                .achievements-back{
-                    top: 0;
-                    z-index: -99;
-                    left: 0;
-                    background-attachment: fixed;
-                    background-repeat: no-repeat;
-                    background: url('https://live.staticflickr.com/65535/51258599313_3b25f60472.jpg');
-                    background-size: cover;
-                    background-position: center;
-                }
-                .black-overlay{
-                    top: 0;
-                    left: 0;
-                    position: fixed;
-                    width: 100vw;
-                    height: 100%;
-                    opacity: 0.8;
-                    background-color: black;
-                }
-            `}
-            </style>
         </div>
     )
 }

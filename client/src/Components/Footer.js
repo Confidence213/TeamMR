@@ -23,7 +23,7 @@ const Footer = () => {
             <div className='w-md-half w-full container-fluid'>
                 <div className='row justify-content-center'>
                     <div className='col-12 d-flex justify-content-center mt-20'>
-                        <a className='mx-10' target='_blank' rel='noreferrer' href='/dummy'>
+                        <a className='mx-10' target='_blank' rel='noreferrer' href='https://instagram.com/teammanipalracing?utm_medium=copy_link'>
                             <Instagram onMouseEnter={() => onHover(1)} onMouseLeave={noHover} size={35} color={ hover && index === 1 ? '#ec7b4d' : '#e3e5e5' }/>
                         </a>
                         <a className='mx-10' target='_blank' rel='noreferrer' href='/dum'>
@@ -46,13 +46,18 @@ const Footer = () => {
                         <div className='col-md-6 mx-auto col-12 d-flex justify-content-around'>
                         <Link to='/sponsors' style={divStyle} className='mx-md-10'>Sponsors</Link>
                         <Link to='/achievements' style={divStyle} className='mx-md-10'>Achievements</Link>
-                        <Link to='/home#contact' style={divStyle} className='mx-md-10'>Contact</Link>
+                        <Link to='/#contact-us' style={divStyle} className='mx-md-10'>Contact</Link>
                         </div>
                     </div>
                     <div style={{borderBottom: '1px solid white'}} className='w-md-full w-three-quarter my-10'></div>
                     <div className='col-12 font-fira-sans'>
                         <p style={{ fontSize: '1.6rem', color: '#FFFFFF',fontWeight:'lighter' }} className='mx-auto text-center'>We made this website. 
-                        <span style={{ color: '#EC7B4D' }} className='findus-button p-5'><Link to='/findus'>Find us</Link></span></p>
+                            <span style={{ color: '#EC7B4D' }} className='findus-button p-5'>
+                                <Link to='/findus'>
+                                    Find us
+                                </Link>
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>

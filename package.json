@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Parthiv-M/teammanipalracing#readme",
   "dependencies": {
-    "concurrently": "^6.2.0"
+    "concurrently": "^6.2.0",
+    "react-tabs": "^3.2.2"
   }
 }

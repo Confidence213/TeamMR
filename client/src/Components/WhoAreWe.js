@@ -40,7 +40,7 @@ const WhoAreWe = () => {
                     </div>
                 </div>
             </div>
-            <div className="container-fluid">
+            {/* <div className="container-fluid">
                 <div className="d-flex flex-md-row flex-column justify-content-md-around align-items-center m-auto w-three-quarter w-md-half">
                     {
                         achieveCoinData.map((coin, index) => {
@@ -55,7 +55,7 @@ const WhoAreWe = () => {
                         })
                     }
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

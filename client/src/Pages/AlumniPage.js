@@ -2,14 +2,36 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import NavBar from './../Components/NavBar';
 import Footer from './../Components/Footer';
-import Gallery from 'react-photo-gallery';
-import './../Styles/alumniStyles.css';
 import axios from 'axios';
 import LoaderComponent from '../Components/LoaderComponent';
+import AlumniCard from '../Components/AlumniCard';
 
 const AlumniPage = () => {
 
     const [loading, setLoading] = useState(true);
+    const [alumni, setAlumni] = useState();
+    const [year, setYear] = useState(201011);
+
+    const [pressedYear, setPressedYear] = useState(201011);
+
+    const onClick = (year) => {
+      setPressedYear(year);
+      setLoading(true);
+      setYear(year);
+      fetchData(year);
+    }
+
+    const years = [201011, 201213, 201314, 201516];
+
+    const fetchData = async (year) => {
+      let alumniResponse = await axios.get(`../api/team/mbaja/${year}?isSubHead=true&isAlumni=true&isTopThree=false`) 
+      setAlumni(alumniResponse.data);
+      setLoading(false);
+    }
+
+    useState(() => {
+      fetchData(year);
+    }, [year]);
 
     return (
         <div>
@@ -65,12 +87,37 @@ const AlumniPage = () => {
                         Team Manipal Racing has helped individulas grow while being part of our team. Our Alumni are now in top positions in their respective fields and we are proud of them.  
                     </p>
                 </div>
+                <div className="d-flex flex-md-row flex-column align-items-center justify-content-center">
+                  {
+                    years.map((year, index) => {
+                      return (
+                        <button key={index} className='w-150 font-fira-sans font-size-22 p-5 border border-none' 
+                          style={pressedYear === (year)? { fontWeight: "bold", backgroundColor:'#FF4A00', margin:'0.2rem', borderRadius: "10px", WebkitTransition: '1s', transform:'scale(0.935)'}:{ margin:'0.2rem', cursor: "pointer"}} 
+                          onClick={() => onClick(year)}>
+                            {year.toString().slice(0, 4)}
+                        </button>
+                      )
+                    })
+                  }
+                </div>
                 {
-                    // loading ? <div className='h-550'><LoaderComponent /></div> 
-                    // : 
+                    loading ? <div className='h-550'><LoaderComponent /></div> 
+                    : 
                     <>
                         <div className='container-fluid mx-auto my-20 px-20'>
-
+                          <div className="row w-md-three-quarter w-full mx-auto justify-content-center">
+                            {
+                              alumni.map(al => {
+                                return <AlumniCard 
+                                          key={al._id}
+                                          name={al.name}
+                                          position={al.position}
+                                          teamType={al.teamType}
+                                          linkedin={al.socialLinks ? al.socialLinks.linkedin : null}
+                                        />
+                              })
+                            }
+                          </div>
                         </div>
                     </> 
                 }

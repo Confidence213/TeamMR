@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import NavBar from './../Components/NavBar';
 import Footer from './../Components/Footer';
 import Gallery from 'react-photo-gallery';
-import './../Styles/sponsorStyles.css';
 import axios from 'axios';
 import LoaderComponent from '../Components/LoaderComponent';
 

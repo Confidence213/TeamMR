@@ -52,7 +52,7 @@ const Navbar = () => {
                     <Link to='/achievements' className='navbar-link font-size-14 px-10 d-none d-md-block font-staatliches'>
                         ACHIEVEMENTS
                     </Link>
-                    <Link to='/team/M-Baja' className='navbar-link font-size-14 px-10 d-none d-md-block font-staatliches'>
+                    <Link to='/team' className='navbar-link font-size-14 px-10 d-none d-md-block font-staatliches'>
                         TEAM
                     </Link>
                     <Link to='/alumni' className='navbar-link font-size-14 px-10 d-none d-md-block font-staatliches'>
@@ -74,10 +74,10 @@ const Navbar = () => {
                         <Link to='/achievements' className="sidebar-link sidebar-link-with-icon font-size-24 font-weight-bolder text-white mx-20 my-15" style={{ width: 'fit-content', borderBottom: '1px solid #ec7b4d' }}>
                             ACHIEVEMENTS
                         </Link>
-                        <Link to='/team/M-Baja' className="sidebar-link sidebar-link-with-icon font-size-24 font-weight-bolder text-white mx-20 my-15" style={{ width: 'fit-content', borderBottom: '1px solid #ec7b4d' }}>
+                        <Link to='/team' className="sidebar-link sidebar-link-with-icon font-size-24 font-weight-bolder text-white mx-20 my-15" style={{ width: 'fit-content', borderBottom: '1px solid #ec7b4d' }}>
                             TEAM
                         </Link>
-                        <Link to='/alumni' className='navbar-link font-size-14 px-10 d-none d-md-block font-staatliches'>
+                        <Link to='/alumni' className='sidebar-link sidebar-link-with-icon font-size-24 font-weight-bolder text-white mx-20 my-15' style={{ width: 'fit-content', borderBottom: '1px solid #ec7b4d' }}>
                             ALUMNI
                         </Link>
                         <Link to='/sponsors' className="sidebar-link sidebar-link-with-icon font-size-24 font-weight-bolder text-white mx-20 my-15" style={{ width: 'fit-content', borderBottom: '1px solid #ec7b4d' }}>

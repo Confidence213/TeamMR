@@ -23,14 +23,14 @@ const ContactUs = () => {
                     <div style={{ backgroundColor:'white', filter: 'grayscale(80%)', backgroundImage: 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxJzNQpraqZ_OjUqBmzylS7IHitv3Rdm5qVtvQ_0SrdJIaWQEbcJG_NoCj34zFhWlQDs&usqp=CAU)', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                         <div className='container-fluid p-15' style={{ backdropFilter: 'blur(10px)' }}>
                             <form className="w-md-400 w-full m-auto">
-                                <h1 className='font-staatliches m-0 text-white' style={{ fontSize:'4.5rem' }}>
-                                    LET US KNOW
-                                </h1>
-                                <h2 className='font-fira-sans m-0 text-light' style={{ color:'#222222', fontSize:'1.6rem' }}>
+                                {/* <h1 className='font-staatliches m-0 text-white' style={{ fontSize:'4.5rem' }}>
+                                    HELLO!
+                                </h1> */}
+                                <h2 className='font-fira-sans mt-10 text-light' style={{ color:'#222222', fontSize:'1.6rem' }}>
                                     REACH OUT TO US ON <span className='font-weight-bold'>EMAILID@EXAMPLE.COM</span>
                                 </h2>
                                 <div className='form-group mt-20'>
-                                    <label for="full-name" style={{color:'#efefef', fontSize:'1.7rem'}} className='font-staatliches m-0'>Full name</label>
+                                    <label for="full-name" style={{color:'#efefef', fontSize:'1.7rem'}} className='font-staatliches m-0'>Name</label>
                                     <input type='text' placeholder='How do we know you?' autoComplete='off' className='form-control bg-transparent font-fira-sans' id="full-name" required style={{ border: '2px solid grey' }}/>
                                 </div>
                                 <div className='form-group'>

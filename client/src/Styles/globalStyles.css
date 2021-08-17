@@ -151,11 +151,17 @@ a:hover {
     margin-left: 10px;
 }
 
-.findus-button:hover{
+.findus-button a:hover, .findus-button:hover{
     background-color: var(--contrast-color);
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 /* custom css */
+
+button:focus {
+    outline: none;
+}
 
 .gradient-heading {
     background: -webkit-linear-gradient(135deg, #efefef, #f05416);
@@ -176,10 +182,6 @@ a:hover {
 /* input styling */
 
 input, input:focus {
-    color: white;
-}
-
-.form-control {
     color: white;
 }
 
@@ -218,4 +220,63 @@ input, input:focus {
       transparent
     );
     z-index: -999;
+}
+
+/* banner styles for every page */
+
+.alumni-banner {
+    top: 0;
+    left: 0;
+    filter: brightness(40%);
+    height: 40vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background: url('./../Assets/alumniBack.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.car-banner {
+    background: url('./../Assets/carsBack.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sponsors-banner {
+    top: 0;
+    left: 0;
+    filter: brightness(40%);
+    height: 40vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background: url('./../Assets/sponsorsBack.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.team-banner {
+    top: 0;
+    left: 0;
+    filter: brightness(40%);
+    height: 40vh;
+    width: 100vw;
+    position: absolute;
+    background-repeat: no-repeat;
+    background: url('./../Assets/teamBack.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.achievements-banner {
+    top: 0;
+    left: 0;
+    filter: brightness(40%);
+    height: 40vh;
+    width: 100vw;
+    position: absolute;
+    background-repeat: no-repeat;
+    background: url('./../Assets/achievementBack.jpg');
+    background-size: cover;
+    background-position: center;
 }
