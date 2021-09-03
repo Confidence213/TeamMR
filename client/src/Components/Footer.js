@@ -51,7 +51,8 @@ const Footer = () => {
                     </div>
                     <div style={{borderBottom: '1px solid white'}} className='w-md-full w-three-quarter my-10'></div>
                     <div className='col-12 font-fira-sans'>
-                        <p style={{ fontSize: '1.6rem', color: '#FFFFFF',fontWeight:'lighter' }} className='mx-auto text-center'>We made this website. 
+                        <p style={{ fontSize: '1.6rem', color: '#FFFFFF',fontWeight:'lighter' }} className='mx-auto text-center'>
+                            We are the Developers. 
                             <span style={{ color: '#EC7B4D' }} className='findus-button p-5'>
                                 <Link to='/findus'>
                                     Find us

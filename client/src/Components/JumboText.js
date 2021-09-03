@@ -13,7 +13,7 @@ const JumboText = () => {
                     <p className='font-staatliches' style={{ fontSize:'5rem', color:'#ec7b4d', marginTop: '-5px' }}>
                         <Typewriter
                           options={{
-                            strings: ['Innovate', 'Initiate', 'Incarnate'],
+                            strings: ['Initiate', 'Innovate', 'Incarnate'],
                             autoStart: true,
                             loop: true,
                             pauseFor: 1800

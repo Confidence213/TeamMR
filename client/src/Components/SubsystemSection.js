@@ -1,5 +1,6 @@
 import React from 'react';
 import TeamMemberCard from './TeamMemberCard';
+import MemberCard from './MemberCard';
 
 const SubsystemSection = (props) => {
     return (
@@ -25,7 +26,7 @@ const SubsystemSection = (props) => {
                 props.data.subTeam.map((team, index) => {
                     return (
                         <div className="col-md-3 col-12">
-                            <TeamMemberCard 
+                            <MemberCard 
                                 data={team} 
                                 key={index}
                             />
@@ -34,7 +35,7 @@ const SubsystemSection = (props) => {
                 )
             }   
             </div>
-            <div className="w-full bg-dark" style={{ height: '2px' }}></div>
+            <div className="w-full bg-dark my-10" style={{ height: '2px' }}></div>
         </div>
     );
 }

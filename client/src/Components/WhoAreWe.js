@@ -4,21 +4,6 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 
 const WhoAreWe = () => {
-
-    const achieveCoinData = [
-        {
-            number: 10,
-            name: 'Cars'
-        },
-        {
-            number: 10,
-            name: 'Events'
-        },
-        {
-            number: 10,
-            name: 'Trophies'
-        }
-    ];
     
     useEffect(() => {
         AOS.init({});
@@ -40,22 +25,6 @@ const WhoAreWe = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className="container-fluid">
-                <div className="d-flex flex-md-row flex-column justify-content-md-around align-items-center m-auto w-three-quarter w-md-half">
-                    {
-                        achieveCoinData.map((coin, index) => {
-                            return (
-                                <div key={index} data-aos='fade-up' data-aos-easing='ease-in-sine' className="text-center d-flex flex-md-column align-items-center justify-content-center m-md-0 my-15" style={{ color: '#EC7B4D', border: '5px solid #EC7B4D', borderRadius: '50%', height: '16.5rem', width: '16.5rem' }}>
-                                    <div>
-                                        <h1 className='m-0 font-fira-sans'>{coin.number}</h1> 
-                                        <h3 className='m-0 font-weight-light font-fira-sans'>{coin.name.toUpperCase()}</h3>
-                                    </div>
-                                </div>
-                            );
-                        })
-                    }
-                </div>
-            </div> */}
         </div>
     )
 }

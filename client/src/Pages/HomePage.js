@@ -52,14 +52,7 @@ const HomePage = () => {
                 <meta name="twitter:creator" content="@tmrbaja" />
             </Helmet>
             <div 
-              style={{ 
-                  backgroundImage:'url(https://live.staticflickr.com/65535/51257670217_a37913f03d.jpg)',  
-                  height: '100vh',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                  backgroundAttachment:'fixed'
-              }}
+              className="home-banner"
             >                    
             <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.866)' }}>
               <NavBar />
