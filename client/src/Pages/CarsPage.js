@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './../Components/NavBar';
 import Footer from './../Components/Footer';
-import CarCards from './../Components/CarCards';
+import CarCard from './../Components/CarCards';
 import './../Styles/carStyles.css';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
@@ -10,7 +10,7 @@ import LoaderComponent from '../Components/LoaderComponent';
 const CarsPage = () => {
 
     const [loading, setLoading] = useState(true);
-    const [cars, setCars] = useState([]);
+    const [cars, setCars] = useState();
 
     useEffect(() => {
         async function fetchData  () {
@@ -31,11 +31,11 @@ const CarsPage = () => {
                   name='keywords'
                   content='tmr, manipal, manipal institute of technology, clubs, student clubs, student, organization, cars, racing, atv'
                 />
-                <meta name='url' content='https://teammanipalracing.com/cars' />
+                <meta name='url' content='https://teammanipalracing.in/cars' />
                 <meta name='coverage' content='Worldwide' />
                 <meta name='target' content='all' />
                 <meta name='HandheldFriendly' content='True' />
-                <link rel="canonical" href="https://teammanipalracing.com/cars" />
+                <link rel="canonical" href="https://teammanipalracing.in/cars" />
                 {/* OG meta tags */}
                 <meta property="og:type" content="webpage" />
                 <meta
@@ -47,7 +47,7 @@ const CarsPage = () => {
                   content="All the cars ever fabricated by Team Manipal Racing"
                 />
                 <meta property="og:image" content='' />
-                <meta property="og:url" content='https://teammanipalracing.com/cars' />
+                <meta property="og:url" content='https://teammanipalracing.in/cars' />
                 <meta
                   property="og:site_name"
                   content="Team Manipal Racing"
@@ -66,8 +66,8 @@ const CarsPage = () => {
             </Helmet>
             <div className='d-flex flex-column position-relative' style={{ height:'40vh' }}>
                 <Navbar />
-                <div className='font-staatliches text-white font-weight-bolder text-center mt-auto px-10 z-30' style={{ fontSize:'4.5vmax', letterSpacing:'0.3rem' }}>
-                    OUR CARS, OUR PRIDE
+                <div className='font-roboto text-white font-weight-bolder text-center mt-auto px-10 z-30' style={{ fontSize:'4.5vmax', letterSpacing:'0.3rem' }}>
+                    Our Cars, Our Pride
                 </div>
                 <div className='z-10 position-absolute car-banner' style={{ width:'100vw', height:'40vh', left:'0', top:'0', filter:'brightness(40%)' }}/></div>
                 <div className='font-fira-sans text-white font-size-16 text-center w-md-half mx-auto' style={{ padding:'5rem 5rem' }}>
@@ -80,8 +80,11 @@ const CarsPage = () => {
                     : 
                     <>
                         <div className='d-flex flex-wrap align-items-center justify-content-center mb-20' style={{ padding: '2rem 20%' }}>
-                        <div className='car-card-back'></div>
-                        <CarCards data={cars} />
+                          {
+                            cars.map((car) => {
+                              return <CarCard key={car._id} data={car}/>
+                            })
+                          }
                         </div>
                     </> 
                 }

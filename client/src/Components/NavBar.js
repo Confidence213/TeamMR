@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './../Assets/tmrLogo.png';
+import logoE from './../Assets/tmrELogo.png';
 import { X, Menu } from 'react-feather';
 
 const Navbar = () => {
@@ -43,6 +44,7 @@ const Navbar = () => {
                 <div className='d-none d-md-block'>
                     <div className='navbar-brand px-10 py-5 d-block'>
                         <Link to='/'><img src={logo} alt='TMR Logo' className='h-50' style={{ padding:'0.9rem 0' }}/></Link>
+                        <Link to='/'><img src={logoE} alt='TMR Logo' className='h-50' style={{ padding:'0.7rem 0' }}/></Link>
                     </div>
                 </div>
                 <div className='navbar-content d-flex ml-auto' style={{ letterSpacing:'0.3rem' }}>

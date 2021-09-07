@@ -48,11 +48,11 @@ const FindUs = () => {
                   name='keywords'
                   content='tmr, manipal, manipal institute of technology, clubs, student clubs, student, organization, cars, racing, atv'
                 />
-                <meta name='url' content='https://teammanipalracing.com/' />
+                <meta name='url' content='https://teammanipalracing.in/' />
                 <meta name='coverage' content='Worldwide' />
                 <meta name='target' content='all' />
                 <meta name='HandheldFriendly' content='True' />
-                <link rel="canonical" href="https://teammanipalracing.com/" />
+                <link rel="canonical" href="https://teammanipalracing.in/" />
                 {/* OG meta tags */}
                 <meta property="og:type" content="webpage" />
                 <meta
@@ -64,7 +64,7 @@ const FindUs = () => {
                   content="The official website of Team Manipal Racing"
                 />
                 <meta property="og:image" content='' />
-                <meta property="og:url" content='https://teammanipalracing.com/' />
+                <meta property="og:url" content='https://teammanipalracing.in/' />
                 <meta
                   property="og:site_name"
                   content="Team Manipal Racing"
@@ -96,12 +96,14 @@ const FindUs = () => {
                     </p>
                 </div>
             </div>
-            <div className="h-500 mt-20 row w-full justify-content-center mb-20">
+            <div className="my-20 row w-full justify-content-center">
                 {
                     devs.map((dev, index) => {
                         return (
                             <div key={index} className="col-md-3 d-flex flex-column align-items-center justify-content-center h-md-400 mx-5 my-md-0 my-10">
-                                <img src={dev.photo} alt={dev.name}/>
+                                <div className="w-full text-center">
+                                    <img className="mx-auto" src={dev.photo} alt={dev.name}/>
+                                </div>
                                 <div className="w-three-quarter">
                                   <h2 className="text-center mb-0 font-staatliches text-white">
                                     {dev.name}

@@ -26,7 +26,7 @@ const Footer = () => {
                         <a className='mx-10' target='_blank' rel='noreferrer' href='https://instagram.com/teammanipalracing?utm_medium=copy_link'>
                             <Instagram onMouseEnter={() => onHover(1)} onMouseLeave={noHover} size={35} color={ hover && index === 1 ? '#ec7b4d' : '#e3e5e5' }/>
                         </a>
-                        <a className='mx-10' target='_blank' rel='noreferrer' href='/dum'>
+                        <a className='mx-10' target='_blank' rel='noreferrer' href='https://www.linkedin.com/company/teammanipalracing/?originalSubdomain=in'>
                             <Linkedin onMouseEnter={() => onHover(2)} onMouseLeave={noHover} size={35} color={ hover && index === 2 ? '#ec7b4d' : '#e3e5e5' }/>
                         </a>
                         <a className='mx-10' target='_blank' rel='noreferrer' href='mailto:tmr.mit@manipal.edu'>
@@ -37,16 +37,24 @@ const Footer = () => {
                         </a>
                     </div>
                     <div style={{borderBottom: '1px solid white'}} className='w-md-full w-three-quarter my-10'></div>
-                    <div className='col-6 justify-content-center my-15 font-fira-sans'>
-                        <div className='col-md-6 mx-auto col-12 d-flex justify-content-around'>
-                        <Link to='/' style={divStyle} className='mx-md-10'>Home</Link>
-                        <Link to='/cars' style={divStyle} className='mx-md-10'>Cars</Link>
-                        <Link to='/team' style={divStyle} className='mx-md-10'>Team</Link>
+                    <div className='d-flex flex-md-row flex-column align-items-center justify-content-center w-auto my-15 font-fira-sans'>
+                    <div className="mx-auto text-center">
+                            <Link to='/' style={divStyle} className='mx-md-5'>Home</Link>
                         </div>
-                        <div className='col-md-6 mx-auto col-12 d-flex justify-content-around'>
-                        <Link to='/sponsors' style={divStyle} className='mx-md-10'>Sponsors</Link>
-                        <Link to='/achievements' style={divStyle} className='mx-md-10'>Achievements</Link>
-                        <Link to='/#contact-us' style={divStyle} className='mx-md-10'>Contact</Link>
+                        <div className="mx-auto text-center">
+                            <Link to='/cars' style={divStyle} className='mx-md-5'>Cars</Link>
+                        </div>
+                        <div className="mx-auto text-center">
+                            <Link to='/team' style={divStyle} className='mx-md-5'>Team</Link>
+                        </div>
+                        <div className="mx-auto text-center">
+                            <Link to='/sponsors' style={divStyle} className='mx-md-5'>Sponsors</Link>
+                        </div>
+                        <div className="mx-auto text-center">
+                            <Link to='/achievements' style={divStyle} className='mx-md-5'>Achievements</Link>
+                        </div>
+                        <div className="mx-auto text-center">
+                            <Link to='/#contact-us' style={divStyle} className='mx-md-5'>Contact</Link>
                         </div>
                     </div>
                     <div style={{borderBottom: '1px solid white'}} className='w-md-full w-three-quarter my-10'></div>

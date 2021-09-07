@@ -30,11 +30,11 @@ const AchievementsPage = () => {
                   name='keywords'
                   content='tmr, manipal, manipal institute of technology, clubs, student clubs, student, organization, cars, racing, atv, achievements'
                 />
-                <meta name='url' content='https://teammanipalracing.com/achievements' />
+                <meta name='url' content='https://teammanipalracing.in/achievements' />
                 <meta name='coverage' content='Worldwide' />
                 <meta name='target' content='all' />
                 <meta name='HandheldFriendly' content='True' />
-                <link rel="canonical" href='https://teammanipalracing.com/achievements' />
+                <link rel="canonical" href='https://teammanipalracing.in/achievements' />
                 {/* OG meta tags */}
                 <meta property="og:type" content="webpage" />
                 <meta
@@ -46,7 +46,7 @@ const AchievementsPage = () => {
                   content='What we have achieved at Team Manipal Racing'
                 />
                 <meta property="og:image" content='' />
-                <meta property="og:url" content='https://teammanipalracing.com/achievements' />
+                <meta property="og:url" content='https://teammanipalracing.in/achievements' />
                 <meta
                   property="og:site_name"
                   content="Team Manipal Racing"
@@ -66,7 +66,7 @@ const AchievementsPage = () => {
             <div className='d-flex flex-column position-relative' style={{ height:'40vh' }}>
                 <NavBar/>
                 <div className='z-10 achievements-banner'/>
-                <div className="font-staatliches text-white font-weight-bolder text-center mt-auto px-10 z-30" style={{ fontSize:'5vmax', letterSpacing:'0.3rem'}}>
+                <div className="font-roboto text-white font-weight-bolder text-center mt-auto px-10 z-30" style={{ fontSize:'5vmax', letterSpacing:'0.3rem'}}>
                     Achievements
                 </div>
             </div>

@@ -18,11 +18,11 @@ const HomePage = () => {
                   name='keywords'
                   content='tmr, manipal, manipal institute of technology, clubs, student clubs, student, organization, cars, racing, atv'
                 />
-                <meta name='url' content='https://teammanipalracing.com/' />
+                <meta name='url' content='https://teammanipalracing.in/' />
                 <meta name='coverage' content='Worldwide' />
                 <meta name='target' content='all' />
                 <meta name='HandheldFriendly' content='True' />
-                <link rel="canonical" href="https://teammanipalracing.com/" />
+                <link rel="canonical" href="https://teammanipalracing.in/" />
                 {/* OG meta tags */}
                 <meta property="og:type" content="webpage" />
                 <meta
@@ -34,7 +34,7 @@ const HomePage = () => {
                   content="The official website of Team Manipal Racing"
                 />
                 <meta property="og:image" content='' />
-                <meta property="og:url" content='https://teammanipalracing.com/' />
+                <meta property="og:url" content='https://teammanipalracing.in/' />
                 <meta
                   property="og:site_name"
                   content="Team Manipal Racing"

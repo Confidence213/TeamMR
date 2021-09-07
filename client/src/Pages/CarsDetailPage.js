@@ -40,11 +40,11 @@ const CarsDetailPage = () => {
                   name='keywords'
                   content='tmr, manipal, manipal institute of technology, clubs, student clubs, student, organization, cars, racing, atv'
                 />
-                <meta name='url' content={`https://teammanipalracing.com/cars/${version}`} />
+                <meta name='url' content={`https://teammanipalracing.in/cars/${version}`} />
                 <meta name='coverage' content='Worldwide' />
                 <meta name='target' content='all' />
                 <meta name='HandheldFriendly' content='True' />
-                <link rel="canonical" href={`https://teammanipalracing.com/cars/${version}`} />
+                <link rel="canonical" href={`https://teammanipalracing.in/cars/${version}`} />
                 {/* OG meta tags */}
                 <meta property="og:type" content="webpage" />
                 <meta
@@ -56,7 +56,7 @@ const CarsDetailPage = () => {
                   content={`${cleanVersion()} created by Team Manipal Racing`}
                 />
                 <meta property="og:image" content='' />
-                <meta property="og:url" content={`https://teammanipalracing.com/cars/${version}`} />
+                <meta property="og:url" content={`https://teammanipalracing.in/cars/${version}`} />
                 <meta
                   property="og:site_name"
                   content="Team Manipal Racing"
@@ -112,7 +112,7 @@ const CarsDetailPage = () => {
                             <div className='font-staatliches driver-card row justify-content-center justify-content-md-start order-1 order-md-2 justify-content-start align-items-center mx-0 mb-20 px-0' style={{ letterSpacing: '0.3rem' }}>
                                 <img src={car.driver.image} alt={car.driver.name} className='w-150' style={{ borderRadius: '50%', padding: '0.4vmin', border: '0.4vmin solid white', margin: '1.5rem' }} />
                                 <div className='mx-10'>
-                                    <div className='font-staatliches font-size-18'>DRIVER</div>
+                                    <div className='font-staatliches font-size-18'>TEAM CAPTAIN</div>
                                     <hr className='p-0 m-0 w-md-full w-three-quarter mb-5' style={{ background: "#ec7b4d", height: '0.1px' }} />
                                     <div className='font-staatliches font-size-24 gradient-text'>{car.driver.name}</div>
                                     <div className='font-fira-sans font-size-14 font-weight-light gradient-text'>{car.driver.studies}</div>
@@ -121,9 +121,6 @@ const CarsDetailPage = () => {
                         </div>
                         <div className='order-1 order-md-2 p-20 clipped-div'>
                           <img alt={car.version} src={car.images[0]} className='w-md-450 h-md-400 w-full' style={{ filter: 'grayscale(50%)' }}/>
-                          <p style={{ top: '65%', border: '', padding: '10px 30px', backdropFilter: 'blur(15px)', height: '5rem' }} className='w-450 text-center font-fira-sans position-absolute font-size-20 font-weight-bold text-light d-md-block d-none'>
-                            VERSION {car.version}
-                          </p>
                         </div>
                     </div>
                     <hr className='d-none d-md-block' style={{ background: "#ec7b4d", width: '80vw', height: '0.1rem' }} />

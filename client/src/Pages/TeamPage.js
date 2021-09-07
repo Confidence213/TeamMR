@@ -114,11 +114,11 @@ const CarsPage = () => {
                   name='keywords'
                   content='tmr, manipal, manipal institute of technology, clubs, student clubs, student, organization, cars, racing, atv'
                 />
-                <meta name='url' content='https://teammanipalracing.com/cars' />
+                <meta name='url' content='https://teammanipalracing.in/cars' />
                 <meta name='coverage' content='Worldwide' />
                 <meta name='target' content='all' />
                 <meta name='HandheldFriendly' content='True' />
-                <link rel="canonical" href="https://teammanipalracing.com/cars" />
+                <link rel="canonical" href="https://teammanipalracing.in/cars" />
                 {/* OG meta tags */}
                 <meta property="og:type" content="webpage" />
                 <meta
@@ -130,7 +130,7 @@ const CarsPage = () => {
                   content="Meet the team behind Team Manipal Racing"
                 />
                 <meta property="og:image" content='' />
-                <meta property="og:url" content='https://teammanipalracing.com/cars' />
+                <meta property="og:url" content='https://teammanipalracing.in/cars' />
                 <meta
                   property="og:site_name"
                   content="Team Manipal Racing"
@@ -149,8 +149,8 @@ const CarsPage = () => {
             </Helmet>
             <div className='d-flex flex-column position-relative' style={{ height:'40vh' }}>
                 <Navbar />
-                <div className='font-staatliches text-white font-weight-bolder text-center mt-auto px-10 z-30' style={{ fontSize:'4.5vmax', letterSpacing:'0.3rem' }}>
-                    MEET THE TEAM
+                <div className='font-roboto text-white font-weight-bolder text-center mt-auto px-10 z-30' style={{ fontSize:'4.5vmax', letterSpacing:'0.3rem' }}>
+                    Meet The Team
                 </div>
                 <div className='z-10 position-absolute team-banner'/></div>
                 {

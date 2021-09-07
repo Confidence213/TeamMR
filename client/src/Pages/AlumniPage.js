@@ -43,11 +43,11 @@ const AlumniPage = () => {
                   name='keywords'
                   content='tmr, manipal, manipal institute of technology, clubs, student clubs, student, organization, cars, racing, atv, alumni'
                 />
-                <meta name='url' content='https://teammanipalracing.com/alumni' />
+                <meta name='url' content='https://teammanipalracing.in/alumni' />
                 <meta name='coverage' content='Worldwide' />
                 <meta name='target' content='all' />
                 <meta name='HandheldFriendly' content='True' />
-                <link rel="canonical" href="https://teammanipalracing.com/alumni" />
+                <link rel="canonical" href="https://teammanipalracing.in/alumni" />
                 {/* OG meta tags */}
                 <meta property="og:type" content="webpage" />
                 <meta
@@ -59,7 +59,7 @@ const AlumniPage = () => {
                   content="Meet the illustrious alumni from Team Manipal Racing"
                 />
                 <meta property="og:image" content='' />
-                <meta property="og:url" content='https://teammanipalracing.com/alumni' />
+                <meta property="og:url" content='https://teammanipalracing.in/alumni' />
                 <meta
                   property="og:site_name"
                   content="Team Manipal Racing"
@@ -78,8 +78,8 @@ const AlumniPage = () => {
             </Helmet>
             <div className='d-flex flex-column position-relative' style={{ height:'40vh' }}>
                 <NavBar />
-                <div className='font-staatliches text-white font-weight-bolder text-center mt-auto px-10 z-30' style={{ fontSize:'4.5vmax', letterSpacing:'0.3rem' }}>
-                    OUR ALUMNI
+                <div className='font-roboto text-white font-weight-bolder text-center mt-auto px-10 z-30' style={{ fontSize:'4.5vmax', letterSpacing:'0.3rem' }}>
+                    Our Alumni
                 </div>
                 <div className='z-10 position-absolute alumni-banner'/></div>
                 <div className='font-fira-sans text-white font-size-16 text-center w-md-half mx-auto' style={{ padding:'5rem 5rem' }}>
