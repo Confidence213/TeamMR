@@ -12,7 +12,9 @@ router.post('/', (req, res) => {
     if(req.headers.api_auth === nconf.get('apiAuth')) {
         let sponsor = new Sponsors({
             name: req.body.name,
-            image: req.body.image           
+            src: req.body.src,
+            height: req.body.height,
+            width: req.body.width           
         });
         sponsor.save().then(() => {
             res.status(200).send({ success: true, message: 'Sponsor created' });

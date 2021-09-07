@@ -7,7 +7,15 @@ const Sponsors = new Schema({
        type: String,
        required: true
    }, 
-   image: {
+   height: {
+       type: Number,
+       default: 1
+   },
+   width: {
+       type: Number,
+       default: 1
+   },
+   src: {
        type: String,
        default: 'https://www.clipartkey.com/mpngs/m/164-1648425_sponsors-partnership-icon-png.png'
    } 
