@@ -101,8 +101,8 @@ const FindUs = () => {
                     devs.map((dev, index) => {
                         return (
                             <div key={index} className="col-md-3 d-flex flex-column align-items-center justify-content-center h-md-400 mx-5 my-md-0 my-10">
-                                <div className="w-full text-center">
-                                    <img className="mx-auto" src={dev.photo} alt={dev.name}/>
+                                <div className="mx-auto text-center">
+                                    <img className="w-three-quarter mx-auto" src={dev.photo} alt={dev.name}/>
                                 </div>
                                 <div className="w-three-quarter">
                                   <h2 className="text-center mb-0 font-staatliches text-white">

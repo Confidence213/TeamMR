@@ -23,7 +23,7 @@ const CarCard = ({data}) => {
                 <div className='position-absolute z-10' style={{ left:'0', top:'0', width:'100%', height:'100%', border: 'none', borderRadius: 4, backgroundColor: 'black', opacity: '40%' }}></div>
                 <div className="mx-auto d-flex flex-column justify-content-center align-items-center">
                     <div className={`text-white font-fira-sans font-size-24 z-20 position-relative text-center m-auto ${(hover && index === (data.version)) ? 'm-auto' : 'mt-auto mx-auto'}`} style={{ pointerEvents:'none' }}>
-                        v{data.version}
+                        { data.electric && "e" }v{data.version}
                     </div>
                     {
                         data.electric 

@@ -17,6 +17,7 @@ const CarsPage = () => {
     const [structHead, setStructHead] = useState();
     const [transmHead, setTransmHead] = useState();
     const [vehicleHead, setVehicleHead] = useState();
+    const [brakesHead, setBrakesHead] = useState();
     const [electHead, setElectHead] = useState();
     const [suspenHead, setSuspenHead] = useState();
 
@@ -24,6 +25,7 @@ const CarsPage = () => {
     const [structTeam, setStructTeam] = useState();
     const [transmTeam, setTransmTeam] = useState();
     const [vehicleTeam, setVehicleTeam] = useState();
+    const [brakesTeam, setBrakesTeam] = useState();
     const [electTeam, setElectTeam] = useState();
     const [suspenTeam, setSuspenTeam] = useState();
 
@@ -33,16 +35,16 @@ const CarsPage = () => {
 
     const fetchData = async (team) => {
 
-      console.log("fetching " + team)
       // team leads
       const resTopThree = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=true`);
-      setTopThree(resTopThree)
+      setTopThree(resTopThree);
 
       // subheads
       const manageHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Management`);
       const structHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Structures`);
       const transmHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Transmission`);
       const vehicleHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Vehicle`);
+      const brakesHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Brakes`);
       const electHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Electronics`);
       const suspenHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Suspension`);
       
@@ -50,6 +52,7 @@ const CarsPage = () => {
       setStructHead(structHead.data[0]);
       setTransmHead(transmHead.data[0]);
       setVehicleHead(vehicleHead.data[0]);
+      setBrakesHead(brakesHead.data[0]);
       setElectHead(electHead.data[0]);
       setSuspenHead(suspenHead.data[0]);
 
@@ -58,6 +61,7 @@ const CarsPage = () => {
       const structTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Structures`);
       const transmTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Transmission`);
       const vehicleTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Vehicle`);
+      const brakesTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Brakes`);
       const electTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Electronics`);
       const suspenTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Suspension`);
       
@@ -65,6 +69,7 @@ const CarsPage = () => {
       setManageTeam(manageTeam.data);
       setTransmTeam(transmTeam.data);
       setVehicleTeam(vehicleTeam.data);
+      setBrakesTeam(brakesTeam.data);
       setElectTeam(electTeam.data);
       setSuspenTeam(suspenTeam.data);
 
@@ -96,6 +101,11 @@ const CarsPage = () => {
         name: "Vehicle Dynamics",
         subHead: vehicleHead,
         subTeam: vehicleTeam
+      },
+      {
+        name: "Brakes",
+        subHead: brakesHead,
+        subTeam: brakesTeam
       },
       {
         name: "Management",
