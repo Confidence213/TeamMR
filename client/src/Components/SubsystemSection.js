@@ -13,8 +13,8 @@ const SubsystemSection = (props) => {
                             <p className="font-staatliches font-size-24 text-white">
                                 {props.data.name}
                             </p>
-                            <p className="text-white font-fira-sans">
-                                Something about the subsystem here please
+                            <p className="text-white text-left font-fira-sans">
+                                { props.data.description ? props.data.description : "There is no description here yet" }
                             </p>
                         </div>
                         <div className="col-md-3 col-12">
