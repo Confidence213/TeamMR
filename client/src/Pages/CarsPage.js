@@ -14,7 +14,7 @@ const CarsPage = () => {
 
     useEffect(() => {
         async function fetchData  () {
-            const resCars = await axios.get('api/cars/');
+            const resCars = await axios.get('/api/cars/');
             setCars(resCars.data.reverse());
             setLoading(false);
         }

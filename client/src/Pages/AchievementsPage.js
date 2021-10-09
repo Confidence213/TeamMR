@@ -13,7 +13,7 @@ const AchievementsPage = () => {
 
     useEffect(() => {
         async function fetchData  () {
-            const resAchieve = await axios.get('api/achievements');
+            const resAchieve = await axios.get('/api/achievements');
             setAchievements(resAchieve.data);
             setLoading(false);
         }
