@@ -10,11 +10,8 @@ const AchievementCard = (props) => {
     }, []);
 
     return(
-        <div data-aos='fade-down' className='text-white col-4 d-flex flex-column align-items-center m-20 h-auto' >
+        <div data-aos='fade-down' className='text-white col-md-4 col-12 d-flex flex-column align-items-center m-20 h-auto' >
             <div className='font-staatliches gradient-text' style={{ fontSize: '10rem', color: 'rgba(144,144,144,0.8)'}}>{props.year}</div>
-            {/* <div style={{ width: '30rem', height: '320px'}}>
-                <img src={props.image} alt={props.title} className='h-full w-full'></img>
-            </div> */}
             <div className='d-flex flex-column m-10 w-300 ml-20'>
                 <div className='font-staatliches' style={{ color: '#D25D2A', fontSize: '3.5rem', margin: '1.5rem 0' }}>{props.title}</div>
                 {
