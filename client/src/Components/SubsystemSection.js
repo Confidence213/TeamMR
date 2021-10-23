@@ -17,7 +17,7 @@ const SubsystemSection = (props) => {
                                 { props.data.description ? props.data.description : "There is no description here yet" }
                             </p>
                         </div>
-                        <div className="col-md-3 col-12">
+                        <div className="col-md-3 col-11 mx-auto">
                             {
                                 props.data.subHead ? 
                                 <TeamMemberCard data={props.data.subHead}/> : ""
@@ -28,7 +28,7 @@ const SubsystemSection = (props) => {
                     {
                         props.data.subTeam.map((team, index) => {
                             return (
-                                <div className="col-md-3 col-12">
+                                <div className="col-md-3 col-11 d-flex flex-md-row flex-column align-items-center mx-auto mx-md-0">
                                     <MemberCard 
                                         data={team} 
                                         key={index}

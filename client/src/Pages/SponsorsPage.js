@@ -8,6 +8,8 @@ import LoaderComponent from '../Components/LoaderComponent';
 import { ChevronRight } from 'react-feather';
 import AOS from 'aos';
 
+require("dotenv").config();
+
 const SponsorsPage = () => {
 
     const [loading, setLoading] = useState(true);
@@ -15,7 +17,7 @@ const SponsorsPage = () => {
 
     useEffect(() => {
       async function fetchData  () {
-        const resSponsor = await axios.get('/api/sponsors/');
+        const resSponsor = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/sponsors/`);
         setSponsors(resSponsor.data);
         setLoading(false);
       }

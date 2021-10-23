@@ -6,6 +6,8 @@ import axios from 'axios';
 import LoaderComponent from '../Components/LoaderComponent';
 import TeamTab from '../Components/TeamTab';
 
+require("dotenv").config();
+
 const CarsPage = () => {
 
     const [loading, setLoading] = useState(true);
@@ -37,17 +39,17 @@ const CarsPage = () => {
       
       setTeam(team);
       // team leads
-      const resTopThree = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=true`);
+      const resTopThree = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=true`);
       setTopThree(resTopThree);
 
       // subheads
-      const manageHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Management`);
-      const structHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Structures`);
-      const transmHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Transmission`);
-      const vehicleHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Vehicle`);
-      const brakesHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Brakes`);
-      const electHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Electronics`);
-      const suspenHead = await axios.get(`../api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Suspension`);
+      const manageHead = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Management`);
+      const structHead = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Structures`);
+      const transmHead = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Transmission`);
+      const vehicleHead = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Vehicle`);
+      const brakesHead = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Brakes`);
+      const electHead = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Electronics`);
+      const suspenHead = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=true&isAlumni=false&isTopThree=false&subsystem=Suspension`);
       
       setManageHead(manageHead.data[0]);
       setStructHead(structHead.data[0]);
@@ -58,13 +60,13 @@ const CarsPage = () => {
       setSuspenHead(suspenHead.data[0]);
 
       // team members
-      const manageTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Management`);
-      const structTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Structures`);
-      const transmTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Transmission`);
-      const vehicleTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Vehicle`);
-      const brakesTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Brakes`);
-      const electTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Electronics`);
-      const suspenTeam = await axios.get(`../api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Suspension`);
+      const manageTeam = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Management`);
+      const structTeam = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Structures`);
+      const transmTeam = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Transmission`);
+      const vehicleTeam = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Vehicle`);
+      const brakesTeam = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Brakes`);
+      const electTeam = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Electronics`);
+      const suspenTeam = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/${team}/202122?isSubHead=false&isAlumni=false&isTopThree=false&subsystem=Suspension`);
       
       setStructTeam(structTeam.data);
       setManageTeam(manageTeam.data);

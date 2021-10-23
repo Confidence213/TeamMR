@@ -16,7 +16,7 @@ const TeamTab = (props) => {
         </Tab>
       </TabList>
       <TabPanel>
-        <div className="w-md-half mx-auto my-15 d-flex flex-md-row flex-column align-items-center justify-content-center">
+        <div className="w-md-half w-three-fourth mx-auto my-15 d-flex flex-md-row flex-column align-items-center justify-content-center">
           {
             props.topThree.slice(0, 2).map((top, index) => {
               return (

@@ -7,6 +7,8 @@ import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import LoaderComponent from '../Components/LoaderComponent';
 
+require("dotenv").config();
+
 const CarsPage = () => {
 
     const [loading, setLoading] = useState(true);
@@ -14,7 +16,7 @@ const CarsPage = () => {
 
     useEffect(() => {
         async function fetchData  () {
-            const resCars = await axios.get('/api/cars/');
+            const resCars = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/cars/`);
             setCars(resCars.data.reverse());
             setLoading(false);
         }

@@ -6,6 +6,8 @@ import NavBar from './../Components/NavBar';
 import Footer from './../Components/Footer';
 import LoaderComponent from '../Components/LoaderComponent';
 
+require("dotenv").config();
+
 const AchievementsPage = () => {
 
     const [achievements, setAchievements] = useState([]);
@@ -13,7 +15,7 @@ const AchievementsPage = () => {
 
     useEffect(() => {
         async function fetchData  () {
-            const resAchieve = await axios.get('/api/achievements');
+            const resAchieve = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/achievements`);
             setAchievements(resAchieve.data);
             setLoading(false);
         }

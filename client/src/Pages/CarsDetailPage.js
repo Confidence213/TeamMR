@@ -6,6 +6,8 @@ import NavBar from './../Components/NavBar';
 import LoaderComponent from '../Components/LoaderComponent';
 import Footer from '../Components/Footer';
 
+require("dotenv").config();
+
 const CarsDetailPage = () => {
 
     const { version } = useParams(); 
@@ -23,7 +25,7 @@ const CarsDetailPage = () => {
 
     useEffect(() => {
         async function fetchData  () {
-            const resCar = await axios.get(`../api/cars/${version.split('-')[version.split('-').length-1]}`);            
+            const resCar = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/cars/${version.split('-')[version.split('-').length-1]}`);            
             setCar(resCar.data[0]);
             setLoading(false);
         }

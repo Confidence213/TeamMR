@@ -6,6 +6,8 @@ import axios from 'axios';
 import LoaderComponent from '../Components/LoaderComponent';
 import AlumniCard from '../Components/AlumniCard';
 
+require("dotenv").config();
+
 const AlumniPage = () => {
 
     const [loading, setLoading] = useState(true);
@@ -24,7 +26,7 @@ const AlumniPage = () => {
     const years = [201011, 201213, 201314, 201516];
 
     const fetchData = async (year) => {
-      let alumniResponse = await axios.get(`../api/team/mbaja/${year}?isSubHead=true&isAlumni=true&isTopThree=false`) 
+      let alumniResponse = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/team/mbaja/${year}?isSubHead=true&isAlumni=true&isTopThree=false`) 
       setAlumni(alumniResponse.data);
       setLoading(false);
     }
