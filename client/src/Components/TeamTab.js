@@ -4,6 +4,7 @@ import SubsystemSection from './SubsystemSection';
 import TeamMemberCard from './TeamMemberCard';
 
 const TeamTab = (props) => {
+  console.log(props)
   
   return (
     <Tabs className='text-center w-full'>
