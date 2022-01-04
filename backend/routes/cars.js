@@ -38,8 +38,10 @@ router.post('/', (req, res) => {
 router.get('/', async (req, res) => {
     try {
         let cars = await Cars.find({});
+        let mcars = await Cars.find({ electric: false })
+        let ecars = await Cars.find({ electric: true })
         if(!cars) return res.status(401).send({ success: false });
-        res.status(200).send(cars);
+        res.status(200).send({ cars: cars, mcars: mcars.length, ecars: ecars.length });
     } catch (error) {
         console.log(error);
         res.status(500).send({ success:false });
@@ -53,8 +55,10 @@ router.get('/:versionNum', async (req, res) => {
         let car = await Cars.find({
             version: version
         });
+        let mcars = await Cars.find({ electric: false })
+        let ecars = await Cars.find({ electric: true })
         if(!car) return res.status(401).send({ success: false });
-        res.status(200).send(car);
+        res.status(200).send({car: car, mcars: mcars.length, ecars: ecars.length});
     } catch (error) {
         console.log(error);
         res.status(500).send({ success:false });
