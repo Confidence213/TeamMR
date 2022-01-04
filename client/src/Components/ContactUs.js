@@ -51,11 +51,11 @@ const ContactUs = () => {
                                 </h2>
                                 <div className='form-group mt-20'>
                                     <label htmlFor="full-name" style={{color:'#efefef', fontSize:'1.7rem'}} className='font-staatliches m-0'>Name</label>
-                                    <input type='text' id="name" placeholder='How do we know you?' autoComplete='false' className='form-control bg-transparent text-white font-fira-sans' required style={{ border: '2px solid grey' }}/>
+                                    <input type='text' id="name" autoComplete='false' className='form-control bg-transparent text-white font-fira-sans' required style={{ border: '2px solid grey' }}/>
                                 </div>
                                 <div className='form-group'>
                                     <label htmlFor="email-id" style={{ color:'#efefef',fontSize:'1.7rem' }} className='font-staatliches m-0'>Email Address</label>
-                                    <input type="text" id="email" placeholder='Where do we reach out to you?' autoComplete='false' className='form-control bg-transparent text-white font-fira-sans' required style={{ border: '2px solid grey' }}/>
+                                    <input type="text" id="email" autoComplete='false' className='form-control bg-transparent text-white font-fira-sans' required style={{ border: '2px solid grey' }}/>
                                 </div>
                                 <div className='form-group'>
                                     <label htmlFor='description' style={{color:'#efefef', fontSize:'1.7rem'}} className='font-staatliches m-0'>Message</label>

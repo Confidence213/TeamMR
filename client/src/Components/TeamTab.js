@@ -4,15 +4,14 @@ import SubsystemSection from './SubsystemSection';
 import TeamMemberCard from './TeamMemberCard';
 
 const TeamTab = (props) => {
-  console.log(props)
-  
+
   return (
     <Tabs className='text-center w-full'>
       <TabList className="d-flex mx-auto justify-content-center">
-        <Tab onClick={() => props.fetchData("mbaja")} className="d-flex align-items-center justify-content-center font-staatliches font-size-24" style={{ height: "60px", borderRadius: "10px", width: "110px", cursor: "pointer" }}>
+        <Tab onClick={() => { props.fetchData("mbaja");}} className="d-flex align-items-center justify-content-center font-staatliches font-size-24" style={{ height: "60px", borderRadius: "10px", width: "110px", cursor: "pointer" }}>
           M BAJA
         </Tab>
-        <Tab onClick={() => props.fetchData("ebaja")} className="d-flex align-items-center justify-content-center font-staatliches font-size-24" style={{ height: "60px", borderRadius: "10px", width: "110px", cursor: "pointer" }}>
+        <Tab onClick={() => { props.fetchData("ebaja"); }} className="d-flex align-items-center justify-content-center font-staatliches font-size-24" style={{ height: "60px", borderRadius: "10px", width: "110px", cursor: "pointer" }}>
           E BAJA
         </Tab>
       </TabList>

@@ -22,11 +22,14 @@ const CarsDetailPage = () => {
 
     const [loading, setLoading] = useState(true);
     const [car, setCar] = useState();
+    const [mcars, setMcars] = useState(0)
 
     useEffect(() => {
         async function fetchData  () {
-            const resCar = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/cars/${version.split('-')[version.split('-').length-1]}`);            
-            setCar(resCar.data[0]);
+            const resCar = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/cars/${version.split('-')[version.split('-').length-1]}`);           
+            console.log(resCar)
+            setCar(resCar.data.car[0])
+            setMcars(resCar.data.mcars)
             setLoading(false);
         }
         fetchData();
@@ -84,7 +87,7 @@ const CarsDetailPage = () => {
                 <>
                   <div className='d-flex flex-column justify-content-center align-items-center m-0 p-0'>
                     <div className='d-flex flex-column align-items-center text-white' style={{ letterSpacing: '0.3rem', lineHeight: '1' }}>
-                        <div className='font-staatliches d-md-none' style={{ fontSize: '5vmax' }}>VERSION {car.version}</div>
+                        <div className='font-staatliches d-md-none' style={{ fontSize: '5vmax' }}>VERSION {car.electric ? car.version - mcars : car.version}</div>
                         <div className='font-fira-sans d-md-none font-weight-light' style={{ fontSize: '3vmax' }}>{car.weight} KG</div>
                     </div>
                     <div className='d-flex flex-row justify-content-center align-items-center'>
@@ -94,7 +97,7 @@ const CarsDetailPage = () => {
                     <div className='d-flex flex-column flex-md-row align-items-center' style={{ minHeight: '70vh' }}>
                         <div className='d-flex flex-column order-2 order-md-1 text-white'>
                             <div className='font-staatliches d-flex flex-row mx-20 my-0 py-0' style={{ letterSpacing: '0.3rem' }}>
-                                <div className='p-0 m-0 d-none d-md-block' style={{ fontSize: '5vmax' }}>VERSION {car.version}</div>
+                                <div className='p-0 m-0 d-none d-md-block' style={{ fontSize: '5vmax' }}>VERSION {car.electric ? car.version - mcars : car.version}</div>
                                 <div className='d-none d-md-block gradient-text' style={{ fontSize: '2.5vmax', padding: '2.5vmax' }}>{car.weight} KG</div>
                             </div>
                             <div className="row text-white font-fira-sans order-2 mx-20 my-0 py-0" style={{ letterSpacing: '0.3rem' }}>
@@ -111,13 +114,13 @@ const CarsDetailPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='font-staatliches driver-card row justify-content-center justify-content-md-start order-1 order-md-2 justify-content-start align-items-center mx-0 mb-20 px-0' style={{ letterSpacing: '0.3rem' }}>
-                                <img src={car.driver.image} alt={car.driver.name} className='w-150' style={{ borderRadius: '50%', padding: '0.4vmin', border: '0.4vmin solid white', margin: '1.5rem' }} />
-                                <div className='mx-10'>
+                            <div className='font-staatliches w-three-fourth mx-md-20 driver-card row justify-content-center justify-content-md-start order-1 order-md-2 justify-content-start align-items-center mx-0 mb-20 px-0' style={{ letterSpacing: '0.3rem' }}>
+                                {/* <img src={car.driver.image} alt={car.driver.name} className='w-150' style={{ borderRadius: '50%', padding: '0.4vmin', border: '0.4vmin solid white', margin: '1.5rem' }} /> */}
+                                <div className='mx-md-20'>
                                     <div className='font-staatliches font-size-18'>TEAM CAPTAIN</div>
-                                    <hr className='p-0 m-0 w-md-full w-three-quarter mb-5' style={{ background: "#ec7b4d", height: '0.1px' }} />
+                                    <hr className='p-0 m-0 w-full w-three-quarter mb-5' style={{ background: "#ec7b4d", height: '0.1px' }} />
                                     <div className='font-staatliches font-size-24 gradient-text'>{car.driver.name}</div>
-                                    <div className='font-fira-sans font-size-14 font-weight-light gradient-text'>{car.driver.studies}</div>
+                                    {/* <div className='font-fira-sans font-size-14 font-weight-light gradient-text'>{car.driver.studies}</div> */}
                                 </div>
                             </div>
                         </div>
@@ -191,10 +194,6 @@ const CarsDetailPage = () => {
                   </div>
                   <style jsx>
                   {`
-                    .driver-card {
-                      background-color: rgba(0, 0, 0, 0.45);
-                      border-radius: 100px 10px 10px 100px;
-                    }
                     .car-image-1 {
                       background-image: url('${car.images[0]}');
                       background-position: center;

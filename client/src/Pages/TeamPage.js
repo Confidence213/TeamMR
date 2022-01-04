@@ -98,12 +98,6 @@ const CarsPage = () => {
         subHead: structHead,
         subTeam: structTeam,
         description: teamType === "ebaja" ? estruc : mstruc
-      },
-      {
-        name: "Electronics",
-        subHead: electHead,
-        subTeam: electTeam,
-        description: teamType === "ebaja" ? eelec : "" 
       },  
       {
         name: "Transmission",
@@ -116,6 +110,12 @@ const CarsPage = () => {
         subHead: suspenHead,
         subTeam: suspenTeam,
         description: teamType === "ebaja" ? esusp : msusp
+      },
+      {
+        name: "Electronics",
+        subHead: electHead,
+        subTeam: electTeam,
+        description: teamType === "ebaja" ? eelec : "" 
       },
       {
         name: "Vehicle Dynamics",

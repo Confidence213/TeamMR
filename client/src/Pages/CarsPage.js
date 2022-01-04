@@ -13,11 +13,13 @@ const CarsPage = () => {
 
     const [loading, setLoading] = useState(true);
     const [cars, setCars] = useState();
-
+    const [mcars, setMcars] = useState(0)
+    
     useEffect(() => {
         async function fetchData  () {
             const resCars = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api/cars/`);
-            setCars(resCars.data.reverse());
+            setCars(resCars.data.cars.reverse());
+            setMcars(resCars.data.mcars)
             setLoading(false);
         }
         fetchData();
@@ -84,7 +86,7 @@ const CarsPage = () => {
                         <div className='d-flex flex-wrap align-items-center justify-content-center mb-20' style={{ padding: '2rem 20%' }}>
                           {
                             cars.map((car) => {
-                              return <CarCard key={car._id} data={car}/>
+                              return <CarCard key={car._id} data={car} mcars={mcars}/>
                             })
                           }
                         </div>

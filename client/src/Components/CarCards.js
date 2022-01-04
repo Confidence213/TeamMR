@@ -2,7 +2,10 @@ import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './../Styles/carStyles.css';
 
-const CarCard = ({data}) => {
+const CarCard = (props) => {
+
+    const data = props.data
+
     const [hover, setHover] = useState(false);
     const [index, setIndex] = useState(0);
 
@@ -17,13 +20,13 @@ const CarCard = ({data}) => {
     }
     
     return (
-        <Link to={`/cars/version-${data.version}`}>
+        <Link to={`/cars/${data.electric ? "ev" : "mv"}/version-${data.version}`}>
             <div className='card h-md-150 h-200 w-md-200 w-300 mx-10 my-10 d-flex p-md-10' style={{ border:'none', borderRadius: 4, letterSpacing:'0.2rem' }} >
                 <img src={data.images[0]} alt={data.version} className='position-absolute z-0' style={{ left:'0', border: 'none', borderRadius: 4, top:'0', width:'100%', height:'100%', filter:'brightness(50%)'}} />
                 <div className='position-absolute z-10' style={{ left:'0', top:'0', width:'100%', height:'100%', border: 'none', borderRadius: 4, backgroundColor: 'black', opacity: '40%' }}></div>
                 <div className="mx-auto d-flex flex-column justify-content-center align-items-center">
                     <div className={`text-white font-fira-sans font-size-24 z-20 position-relative text-center m-auto ${(hover && index === (data.version)) ? 'm-auto' : 'mt-auto mx-auto'}`} style={{ pointerEvents:'none' }}>
-                        { data.electric && "e" }v{data.version}
+                        { data.electric && "e" }v{ data.electric ? data.version - props.mcars : data.version}
                     </div>
                     {
                         data.electric 
